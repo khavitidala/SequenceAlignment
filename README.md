@@ -1,2 +1,2 @@
-# SequenceAlignment
-Using Dynamic Programming Approach to solve Sequence Alignment Problem
+# Sequence Alignment
+I use Needleman–Wunsch algorithm to solve sequence alignment problem
