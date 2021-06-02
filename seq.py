@@ -1,6 +1,5 @@
-#import numpy as np
-
 seq = []
+#justForInisialization
 gap = -4
 mismatch = 0
 match = 4
@@ -35,6 +34,7 @@ def readFiles():
             "seq" : "CGCACCACCGGCTCCTGCGAC"
         })
 readFiles()
+
 m = len(seq[1]["seq"]) + 1
 n = len(seq[0]["seq"]) + 1
 A = [[1 for i in range(n)] for j in range(m)]
@@ -54,7 +54,6 @@ def bottomUp():
         maks = max(A[i-1][j]+gap, A[i-1][j-1]+mismatch, A[i][j-1]+gap)
       A[i][j] = maks
 bottomUp()
-#print(np.asarray(A))
 
 def trace(i, j, seq1, seq2, str1, str2):
   now = A[i][j]
@@ -93,7 +92,6 @@ def topDown():
   str2 = i-1
   while(i!=0 and j!=0):
     i, j, seq1, seq2, str1, str2 = trace(i, j, seq1, seq2, str1, str2)
-  i, j, seq1, seq2, str1, str2 = trace(i, j, seq1, seq2, str1, str2)
   seq1 = seq1[::-1]
   seq2 = seq2[::-1]
   print("Best Alignment:")
